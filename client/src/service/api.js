@@ -14,3 +14,17 @@ export const addUser = async (data) => {
     throw error;
   }
 };
+
+
+export const getUsers = async () => {
+  try {
+    const response = await axios.get(`${url}/get-user`);
+    return response;
+  } catch (error) {
+    console.log(
+      "Error while creating api:",
+      error.response?.data || error.message,
+    );
+    throw error;
+  }
+};
